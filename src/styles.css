@@ -168,4 +168,14 @@
 .flap-back{transform:rotateX(180deg) translateZ(.6px);background-color:#f4f0e6;box-shadow:inset 0 3px 5px #65573816}
 .flap-back::after{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(#b5ab9333,transparent)}
 .flap-shadow{position:absolute;top:0;left:1%;width:98%;height:48%;background:linear-gradient(180deg,#51462f08,#51462f55);filter:blur(9px);opacity:0;transform-origin:50% 0;pointer-events:none}
+.music-toggle{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:100;display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:10px 14px;border:1px solid #b4aa873f;border-radius:24px;background:#faf7ef;color:var(--olive);box-shadow:0 3px 16px #51462f18;font:500 13px Arial,sans-serif;cursor:pointer}
+.music-toggle:hover{background:#f1ecdd}.music-toggle:focus-visible{outline:2px solid var(--olive);outline-offset:4px}.music-toggle:disabled{opacity:.6;cursor:default}
+.reading{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+
+
+/* Size the cover lettering to its card width on desktop, rather than the viewport. */
+@media(min-width:700px){
+  .book-cover{container-type:inline-size}
+  .cover-name>div{font-size:clamp(14px,5.5cqw,23px);line-height:1.2;padding-inline:7px;white-space:normal;overflow-wrap:break-word}
+}
 

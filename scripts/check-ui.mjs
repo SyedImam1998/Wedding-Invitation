@@ -51,7 +51,8 @@ try {
     await page.screenshot({path:`${output}/open-${viewport.width}.png`,fullPage:true});
     assert.equal(await page.locator('a').count(),1);
     assert.equal(await page.locator('a').getAttribute('href'),'https://maps.app.goo.gl/9ZZcz9tto8mhHvDbA');
-    assert.equal(await page.locator('audio').count(),0);
+    assert.equal(await page.locator('audio').count(),1);
+    assert.equal(await page.locator('audio').evaluate(el => el.loop),true);
     assert.equal(await page.locator('.reading .english').innerText().then(t=>t.includes('Mohammed Sarvatunnisa')),true);
     assert.equal(await page.locator('body').innerText().then(t=>t.includes('Sarvathunnisa')),false);
     const dimensions = await page.evaluate(() => ({width:innerWidth,scroll:document.documentElement.scrollWidth}));

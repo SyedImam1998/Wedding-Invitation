@@ -52,7 +52,7 @@ The reducer enforces:
 CLOSED → OUTER_OPENING → FLAP_OPENING → CARD_REVEALING → INNER_REVEALED → BOOK_OPENING → BOOK_OPEN
 ```
 
-Repeated/out-of-order input is ignored during transitions. The first tap flips the invitation, opens the envelope flap, and slides the closed booklet out into view. The second tap opens that card and reveals the marriage details. Keyboard users can use Tab and Enter/Space. Opening moves focus to the readable pages. Closing returns focus to the outer-card control. Reduced-motion mode compresses the movements into immediate reveals. There is no audio, calendar integration, login, tracking, or form.
+Repeated/out-of-order input is ignored during transitions. The first tap flips the invitation, opens the envelope flap, and slides the closed booklet out into view. The second tap opens that card and reveals the marriage details. Keyboard users can use Tab and Enter/Space. Opening moves focus to the readable pages. Closing returns focus to the outer-card control. Reduced-motion mode compresses the movements into immediate reveals. The supplied background music loops across all screens, with a fixed mute/unmute control. Playback is attempted on the first screen; browsers that block audible autoplay start it on the first tap. There is no calendar integration, login, tracking, or form.
 
 The animated copies are hidden from assistive technology. The opened English/Telugu text is semantic, selectable text, with language attributes. Mobile pages scroll vertically and preserve both sets of invitation copy.
 
@@ -70,7 +70,7 @@ node scripts/check-ui.mjs
 
 The browser check uses installed Edge by default. Set `BROWSER_CHANNEL=chrome` for installed Chrome, or configure Playwright for your preferred browser. `INVITATION_URL` changes the target URL; `QA_OUTPUT` changes the screenshot folder. The default screenshot folder is a scratch directory outside this project.
 
-Checks cover the state sequence, repeated taps, name decoding, escaped query text, 320/390/768/1440px widths, printed text overflow, both language pages, venue-only outbound linking, no audio, keyboard operation, reduced motion, reset/focus restoration, and long multilingual/blank names.
+Checks cover the state sequence, repeated taps, name decoding, escaped query text, 320/390/768/1440px widths, printed text overflow, both language pages, venue-only outbound linking, looping background audio, keyboard operation, reduced motion, reset/focus restoration, and long multilingual/blank names.
 
 ## Fidelity notes
 
@@ -79,3 +79,4 @@ The ten supplied photographs were inspected as references. The interface uses re
 The ornaments and mosque motifs are recreations. Fonts closely approximate the photographed printing; they are not the printer's original font files. The original calligraphy is represented with a reference-derived emblem and real Arabic accessible text. The floral frame is a reference-derived standalone image. Exact printer outlines and typesetting would require the original print artwork/font files. Review the Telugu transcription against the physical card before guest distribution.
 
 Artwork generation details are in **ARTWORK.md**.
+

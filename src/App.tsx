@@ -4,6 +4,7 @@ import { getInviteeName, invitationConfig, loadInviteeFont } from './config';
 import { invitationReducer } from './machine';
 import { OuterFace, BookCover } from './components/CardFaces';
 import { EnglishPage, TeluguPage } from './components/InvitationPages';
+import { BackgroundMusic } from './components/BackgroundMusic';
 
 export default function App() {
   const [state, dispatch] = useReducer(invitationReducer, 'CLOSED');
@@ -126,6 +127,7 @@ export default function App() {
   }
 
   return <main className={open ? 'experience is-open' : 'experience'} data-state={state}>
+    <BackgroundMusic />
     <div className="scene-section" hidden={open && !closing}>
       <div className="scene" ref={scene}>
         <div className="scene-shadow" />
